@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Sammi Physics Calculator</title>
+
+<style>
+
+body{
+font-family: Arial;
+background:#eef2f7;
+text-align:center;
+}
+
+.container{
+width:350px;
+margin:auto;
+margin-top:50px;
+background:white;
+padding:20px;
+border-radius:10px;
+box-shadow:0px 0px 10px gray;
+}
+
+input{
+width:80%;
+padding:8px;
+margin:5px;
+}
+
+button{
+padding:8px 15px;
+margin:5px;
+}
+
+.result{
+margin-top:10px;
+font-weight:bold;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h2>Sammi Physics Calculator</h2>
+
+<div class="container">
+
+<h3>Force Calculator</h3>
+
+<input id="mass" placeholder="Mass (kg)">
+<br>
+
+<input id="acc" placeholder="Acceleration (m/s²)">
+<br>
+
+<button onclick="force()">Calculate Force</button>
+
+<div class="result" id="forceResult"></div>
+
+<hr>
+
+<h3>Velocity Calculator</h3>
+
+<input id="distance" placeholder="Distance (m)">
+<br>
+
+<input id="time" placeholder="Time (s)">
+<br>
+
+<button onclick="velocity()">Calculate Velocity</button>
+
+<div class="result" id="velocityResult"></div>
+
+<hr>
+
+<h3>Density Calculator</h3>
+
+<input id="mass2" placeholder="Mass (kg)">
+<br>
+
+<input id="volume" placeholder="Volume (m³)">
+<br>
+
+<button onclick="density()">Calculate Density</button>
+
+<div class="result" id="densityResult"></div>
+
+</div>
+
+<script>
+
+function force(){
+
+let m = document.getElementById("mass").value
+let a = document.getElementById("acc").value
+
+let f = m * a
+
+document.getElementById("forceResult").innerHTML =
+"Force = " + f + " Newton"
+
+}
+
+function velocity(){
+
+let d = document.getElementById("distance").value
+let t = document.getElementById("time").value
+
+let v = d / t
+
+document.getElementById("velocityResult").innerHTML =
+"Velocity = " + v + " m/s"
+
+}
+
+function density(){
+
+let m = document.getElementById("mass2").value
+let v = document.getElementById("volume").value
+
+let d = m / v
+
+document.getElementById("densityResult").innerHTML =
+"Density = " + d + " kg/m³"
+
+}
+
+</script>
+
+</body>
+</html>
